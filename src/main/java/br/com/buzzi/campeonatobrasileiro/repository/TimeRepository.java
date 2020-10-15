@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TimeRepository extends JpaRepository<Time, Integer> {
+public interface TimeRepository extends JpaRepository<Time, Long> {
 
-    List<Time> findByNomeIgnoreCaseAndAndIdNot(String nome, Integer id);
-
+    List<Time> findByNomeIgnoreCaseAndIdNot(String nome, Long id);
 }

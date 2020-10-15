@@ -8,7 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface JogoRepository extends JpaRepository<Jogo, Integer> {
-    List<Jogo> findByTime1AndEncerrado(Time time, Boolean encerrado);
-    List<Jogo> findByTime2AndEncerrado(Time time, Boolean encerrado);
+public interface JogoRepository extends JpaRepository<Jogo, Long> {
+
+    List<Jogo> findByTimeMandanteAndEncerrado(Time timeMandante, Boolean encerrado);
+
+    List<Jogo> findByTimeVisitanteAndEncerrado(Time timeVisitante, Boolean encerrado);
+
 }
